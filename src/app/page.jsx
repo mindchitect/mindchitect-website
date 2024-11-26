@@ -1,7 +1,6 @@
-"use client";
+import React from "react";
 import SoftwareIcon from "@/components/shared/icons/SoftwareIcon";
 import Image from "next/image";
-import React, { useEffect } from "react";
 
 export default function page() {
 	return (
