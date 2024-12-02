@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Mulish } from "next/font/google";
 import Script from "next/script";
+import NextTopLoader from "nextjs-toploader";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 
@@ -21,6 +22,10 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body id="body" className={`${mulish.variable} antialiased font-mulish`}>
 				<Script src="/bodymovin.js" defer strategy="beforeInteractive" />
+				<NextTopLoader
+					color="#EEBC07"
+					shadow="0 0 10px #EEBC07,0 0 5px #EEBC07"
+				/>
 				<Header />
 				{children}
 				<Footer />

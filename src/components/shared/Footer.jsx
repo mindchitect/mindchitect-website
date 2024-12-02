@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function Footer() {
 	return (
-		<footer className="py-16 bg-[#010D30] px-10">
-			<div className="w-[25%]">
+		<footer className="py-16 bg-[#010D30] px-10 flex flex-col lg:flex-row items-start justify-between gap-20">
+			<div className="lg:w-[30%] xl:w-[25%]">
 				<Link className="w-max" href={"/"}>
 					<Image
 						src={"/M-logo.png"}
@@ -25,6 +25,83 @@ export default function Footer() {
 					<p className="text-[1.7rem] text-gray-200 font-medium">
 						127 Obafemi Awolowo Ikeja, Lagos Nigeria.
 					</p>
+				</div>
+			</div>
+			<div className="w-full md:w-[60%] lg:w-[40%] flex flex-col gap-y-10 md:flex-row justify-between">
+				<div className="flex flex-col gap-y-10">
+					<h6 className="text-[2rem] font-semibold text-white">Quick Links</h6>
+					<ul className="flex flex-row flex-wrap md:flex-col gap-8">
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								Home
+							</Link>
+						</li>
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								About
+							</Link>
+						</li>
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								Contact
+							</Link>
+						</li>
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								Privacy Policy
+							</Link>
+						</li>
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								Cookie Policy
+							</Link>
+						</li>
+					</ul>
+				</div>
+				<div className="flex flex-col gap-y-10">
+					<h6 className="text-[2rem] font-semibold text-white">Products</h6>
+					<ul className="flex flex-row flex-wrap md:flex-col gap-8">
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								Home
+							</Link>
+						</li>
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								About
+							</Link>
+						</li>
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								Contact
+							</Link>
+						</li>
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								Privacy Policy
+							</Link>
+						</li>
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								Cookie Policy
+							</Link>
+						</li>
+					</ul>
+				</div>
+				<div className="flex flex-col gap-y-10">
+					<h6 className="text-[2rem] font-semibold text-white">Services</h6>
+					<ul className="flex flex-row flex-wrap md:flex-col gap-8">
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								Home
+							</Link>
+						</li>
+						<li>
+							<Link href={"/"} className="text-2xl text-white">
+								About
+							</Link>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</footer>

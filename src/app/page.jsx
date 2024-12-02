@@ -5,12 +5,12 @@ import Image from "next/image";
 export default function page() {
 	return (
 		<main className="">
-			<section className="h-[90vh] bg-[url(/hero.png)] bg-cover pt-[5rem] flex flex-col items-center justify-center w-full">
+			<section className="h-[55vh] md:h-[40vh] lg:h-[90vh] bg-[url(/hero.png)] bg-cover pt-[5rem] flex flex-col items-center justify-center w-full">
 				<div className="flex flex-col gap-y-5 items-center justify-center w-full">
-					<h1 className="font-extrabold text-white text-[8rem] shadow-lg leading-[100%] text-center w-[60%]">
+					<h1 className="font-extrabold text-white text-[4rem] md:text-[6rem] lg:text-[7rem] xl:text-[8rem] shadow-lg leading-[100%] text-center md:w-[60%]">
 						Mission-critical digital solutions
 					</h1>
-					<p className="mt-2 text-[2rem] w-[40%] text-white text-center font-semibold">
+					<p className="mt-2 text-[2rem] md:w-[60%] lg:w-[55%] xl:w-[40%] text-white text-center font-semibold">
 						High performing system solutions that is customized to your
 						organization.
 					</p>
@@ -19,9 +19,11 @@ export default function page() {
 					</button>
 				</div>
 			</section>
-			<section className="px-[90px] pt-28 pb-12 flex justify-center items-center">
-				<div className="w-1/2">
-					<h2 className="text-[6rem] font-black text-[#010D30]">Who we are</h2>
+			<section className="px-8 md:px-[40px] lg:px-[90px] pt-28 pb-12 flex flex-col md:flex-row justify-center items-center">
+				<div className="md:w-1/2">
+					<h2 className="text-[3.5rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] font-black text-[#010D30]">
+						Who we are
+					</h2>
 					<p className="text-[1.8rem] mt-3 w-[90%]">
 						Coregrade provides robust IT solution, system integration especially
 						where performance is critical, custom software development, data
@@ -33,16 +35,22 @@ export default function page() {
 						Learn more
 					</button>
 				</div>
-				<Image src={"/who-we.png"} width={500} height={500} alt="mindchitect" />
+				<Image
+					className="xl:max-w-full lg:max-w-[50%] md:max-w-[50%]"
+					src={"/who-we.png"}
+					width={500}
+					height={500}
+					alt="mindchitect"
+				/>
 			</section>
 			<section className="flex flex-col items-center pb-16">
 				<div className="flex items-center justify-center">
-					<h2 className="text-[6rem] font-black text-center text-[#010D30]">
+					<h2 className="text-[3.5rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] font-black text-center text-[#010D30]">
 						What we do
 					</h2>
 				</div>
-				<div className="w-[80%] flex items-center justify-between mt-24">
-					<div className="w-[350px] h-[450px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
+				<div className="w-[90%] md:w-[80%] lg:w-[95%] xl:w-[90%] min-[1281px]:w-[80%] flex flex-col lg:flex-row items-center justify-between mt-24 gap-y-10">
+					<div className="lg:w-[300px] xl:w-[350px] h-[450px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
 						<div className="flex flex-col gap-y-4 items-center justify-center">
 							<SoftwareIcon />
 							<h3 className="text-[2.5rem] font-bold">Software Development</h3>
@@ -56,7 +64,7 @@ export default function page() {
 							Read More
 						</button>
 					</div>
-					<div className="w-[350px] h-[450px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
+					<div className="lg:w-[300px] xl:w-[350px] h-[450px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
 						<div className="flex flex-col gap-y-4 items-center justify-center">
 							<SoftwareIcon />
 							<h3 className="text-[2.5rem] font-bold">System Integration</h3>
@@ -70,7 +78,7 @@ export default function page() {
 							Read More
 						</button>
 					</div>
-					<div className="w-[350px] h-[450px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
+					<div className="lg:w-[300px] xl:w-[350px] h-[450px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
 						<div className="flex flex-col gap-y-4 items-center justify-center">
 							<SoftwareIcon />
 							<h3 className="text-[2.5rem] font-bold">Data Security</h3>
@@ -86,9 +94,9 @@ export default function page() {
 					</div>
 				</div>
 			</section>
-			<section className="px-[90px] bg-[#202684] py-16 flex justify-center items-center">
-				<div className="w-1/2">
-					<h2 className="text-[5rem] font-bold text-white">
+			<section className="px-8 md:px-[40px] lg:px-[60px] xl:px-[90px] bg-[#202684] py-16 flex flex-col md:flex-row justify-center items-center">
+				<div className="md:w-1/2">
+					<h2 className="text-[3.5rem] md:text-[4rem] lg:text-[5rem] font-bold text-white">
 						We love building meaningful and useful software products.
 					</h2>
 					<p className="text-[1.8rem] mt-10 w-[90%] text-white ">
@@ -101,16 +109,17 @@ export default function page() {
 					width={500}
 					height={500}
 					alt="mindchitect"
+					className="xl:max-w-full lg:max-w-[50%] md:max-w-[50%]"
 				/>
 			</section>
 			<section className="py-16 flex flex-col items-center">
 				<div className="flex items-center justify-center">
-					<h2 className="text-[6rem] font-black text-center text-[#010D30]">
+					<h2 className="text-[3.5rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] font-black text-center text-[#010D30]">
 						Our Products
 					</h2>
 				</div>
-				<div className="w-[80%] flex items-center justify-between mt-24">
-					<div className="w-[350px] h-[500px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
+				<div className="w-[90%] md:w-[80%] lg:w-[95%] xl:w-[90%] min-[1281px]:w-[80%] flex flex-col lg:flex-row gap-y-10 items-center justify-between mt-24">
+					<div className="lg:w-[300px] xl:w-[350px] h-[500px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
 						<div className="flex flex-col gap-y-4 items-center justify-center">
 							<SoftwareIcon />
 							<h3 className="text-[2.5rem] font-bold text-center">
@@ -126,7 +135,7 @@ export default function page() {
 							Read More
 						</button>
 					</div>
-					<div className="w-[350px] h-[500px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
+					<div className="lg:w-[300px] xl:w-[350px] h-[500px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
 						<div className="flex flex-col gap-y-4 items-center justify-center">
 							<SoftwareIcon />
 							<h3 className="text-[2.5rem] font-bold text-center">
@@ -142,7 +151,7 @@ export default function page() {
 							Read More
 						</button>
 					</div>
-					<div className="w-[350px] h-[500px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
+					<div className="lg:w-[300px] xl:w-[350px] h-[500px] rounded-2xl drop-shadow-2xl bg-white border-[1.5px] border-gray-100 p-8 flex flex-col items-center justify-center">
 						<div className="flex flex-col gap-y-4 items-center justify-center">
 							<SoftwareIcon />
 							<h3 className="text-[2.5rem] font-bold text-center">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useScroll } from "ahooks";
 import { usePathname } from "next/navigation";
+import HamburgerIcon from "./icons/HamburgerIcon";
 
 export default function Header() {
 	const scroll = useScroll();
@@ -18,7 +19,7 @@ export default function Header() {
 			<Link className="w-max" href={"/"}>
 				<Image src={"/M-logo.png"} width={150} height={150} alt="Mindchitect" />
 			</Link>
-			<nav className="flex items-center justify-center gap-[30px]">
+			<nav className="hidden md:flex items-center justify-center gap-[30px]">
 				<Link
 					href={"/"}
 					className={`text-[1.7rem] ${
@@ -27,7 +28,7 @@ export default function Header() {
 					Home
 				</Link>
 				<Link
-					href={"/"}
+					href={"/about"}
 					className={`text-[1.7rem] ${
 						pathname === "/about" ? "text-[#eebc07] font-bold" : "text-white"
 					}`}>
@@ -55,6 +56,10 @@ export default function Header() {
 					Contact
 				</Link>
 			</nav>
+			<button
+				className={`md:hidden flex items-center justify-center w-[45px] h-[45px] bg-[#ffffff60] rounded-full`}>
+				<HamburgerIcon />
+			</button>
 		</header>
 	);
 }
