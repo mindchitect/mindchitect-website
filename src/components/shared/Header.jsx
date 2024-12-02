@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useScroll } from "ahooks";
 import { usePathname } from "next/navigation";
 import HamburgerIcon from "./icons/HamburgerIcon";
+import Dropdown from "./Dropdown";
+import SideMenu from "./SideMenu";
 
 export default function Header() {
 	const scroll = useScroll();
@@ -34,13 +36,33 @@ export default function Header() {
 					}`}>
 					About
 				</Link>
-				<Link
-					href={"/"}
-					className={`text-[1.7rem] ${
-						pathname === "/services" ? "text-[#eebc07] font-bold" : "text-white"
-					}`}>
-					Services
-				</Link>
+				<Dropdown
+					renderButton={({ open, setOpen }) => (
+						<button
+							onClick={() => setOpen(!open)}
+							className={`text-[1.7rem] ${
+								pathname.startsWith("/services")
+									? "text-[#eebc07] font-bold"
+									: "text-white"
+							}`}>
+							Services
+						</button>
+					)}
+					items={[
+						{ title: "Software Development", href: "/services/software-dev" },
+						{ title: "Cyber Security", href: "/services/cyber-security" },
+					]}
+					renderItem={({ item, setOpen, index }) => (
+						<Link
+							key={index}
+							href={item.href}
+							onClick={() => setOpen(false)}
+							className={`text-[1.7rem] py-5 px-6 border-b last:border-0 border-b-gray-200 hover:bg-[#f5f5f5] transition-all duration-200`}>
+							{item.title}
+						</Link>
+					)}
+					dropdownWidth="300px"
+				/>
 				<Link
 					href={"/"}
 					className={`text-[1.7rem] ${
@@ -49,17 +71,14 @@ export default function Header() {
 					Product
 				</Link>
 				<Link
-					href={"/"}
+					href={"/contact"}
 					className={`text-[1.7rem] ${
 						pathname === "/contact" ? "text-[#eebc07] font-bold" : "text-white"
 					}`}>
 					Contact
 				</Link>
 			</nav>
-			<button
-				className={`md:hidden flex items-center justify-center w-[45px] h-[45px] bg-[#ffffff60] rounded-full`}>
-				<HamburgerIcon />
-			</button>
+			<SideMenu />
 		</header>
 	);
 }
