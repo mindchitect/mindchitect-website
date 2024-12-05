@@ -64,13 +64,6 @@ export default function Header() {
 					dropdownWidth="300px"
 				/>
 				<Link
-					href={"/"}
-					className={`text-[1.7rem] ${
-						pathname === "/product" ? "text-[#eebc07] font-bold" : "text-white"
-					}`}>
-					Product
-				</Link>
-				<Link
 					href={"/contact"}
 					className={`text-[1.7rem] ${
 						pathname === "/contact" ? "text-[#eebc07] font-bold" : "text-white"

@@ -87,14 +87,6 @@ export default function SideMenu() {
 								</div>
 							</Accordion>
 							<Link
-								href={"/"}
-								onClick={() => setOpen(false)}
-								className={`text-[4rem] font-bold ${
-									pathname === "/product" ? "text-[#eebc07]" : "text-white"
-								}`}>
-								Product
-							</Link>
-							<Link
 								href={"/contact"}
 								onClick={() => setOpen(false)}
 								className={`text-[4rem] font-bold ${

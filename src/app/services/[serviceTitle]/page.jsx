@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import SoftwareIcon from "@/components/shared/icons/SoftwareIcon";
 
 export default function page() {
 	return (
