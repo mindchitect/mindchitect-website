@@ -20,7 +20,7 @@ jobs:
           script: |
             # Set variables
             APP_DIR=~/your-app             # Path to your app directory
-            REPO_DIR=~/mindchitect-website       # Path to your Git repository
+            REPO_DIR=~/mindchitect-website # Path to your Git repository
 
             # Clone or update repository
             if [ ! -d "$REPO_DIR" ]; then
@@ -28,22 +28,17 @@ jobs:
             else
               cd $REPO_DIR
               
-              # Check for local changes and stash them
+              # Check if there are local changes and do not pull if changes exist
               if [[ $(git status --porcelain) ]]; then
-                echo "Local changes detected. Stashing changes."
-                git stash
+                echo "Local changes detected. Skipping git pull."
+                exit 0
               fi
 
+              # Pull latest changes from the remote repository
               git pull origin main
             fi
 
-            # # Sync repository to app directory
-            # rsync -a --delete $REPO_DIR/ $APP_DIR/
-
-            # # Navigate to the app directory
-            # cd $APP_DIR
-
-            # Stop existing application
+            # Stop the existing application
             pkill -f "nohup yarn dev" || true
             rm -f nohup.out
 
