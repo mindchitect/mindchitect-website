@@ -27,7 +27,14 @@ jobs:
               git clone git@github.com:mindchitect/mindchitect-website.git 
             else
               cd $REPO_DIR
+              git stash
               git pull origin main
+              git stash pop 
+              # Handle potential conflicts (optional)
+              if [ $? -ne 0 ]; then
+                echo "Conflicts encountered during git pull. Aborting deployment."
+                exit 1
+              fi
             fi
 
             # # Sync repository to app directory
