@@ -1,0 +1,47 @@
+name: Remote SSH Command
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Remote Server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute Remote SSH Command
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+          host: 20.64.248.238
+          username: ubuntu
+          key: ${{ secrets.PRIVATE_KEY }}
+          port: 22
+          script: |
+            # Set variables
+            APP_DIR=~/your-app             # Path to your app directory
+            REPO_DIR=~/mindchitect-website       # Path to your Git repository
+
+            # Clone or update repository
+            if [ ! -d "$REPO_DIR" ]; then
+              git clone git@github.com:mindchitect/mindchitect-website.git 
+            else
+              cd $REPO_DIR
+              git pull origin main
+            fi
+
+            # # Sync repository to app directory
+            # rsync -a --delete $REPO_DIR/ $APP_DIR/
+
+            # # Navigate to the app directory
+            # cd $APP_DIR
+
+            # Stop existing application
+            pkill -f "nohup yarn dev" || true
+            rm -f nohup.out
+
+            # Install dependencies
+            yarn install
+
+            # Start application
+            nohup yarn dev &
