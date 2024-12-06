@@ -17,7 +17,9 @@ export default function page() {
 					Mindchitect: Your partner for cutting-edge software development, impactful training, and robust cybersecurity solutions.
 					</p>
 					<button className="h-[60px] w-[220px] bg-[#EEBC07] hover:bg-[#f0ca3f] transition-all duration-200 rounded-full text-[1.7rem] font-semibold ">
+						<Link href="/contact">
 						Get Started
+						</Link>
 					</button>
 				</div>
 			</section>
