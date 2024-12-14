@@ -51,6 +51,7 @@ export default function Header() {
 					items={[
 						{ title: "Software Development", href: "/services/software-dev" },
 						{ title: "Cyber Security", href: "/services/cyber-security" },
+						{ title: "Coding Bootcamp", href: "/coding-bootcamp" },
 					]}
 					renderItem={({ item, setOpen, index }) => (
 						<Link

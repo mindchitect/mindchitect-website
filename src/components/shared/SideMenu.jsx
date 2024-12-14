@@ -80,7 +80,7 @@ export default function SideMenu() {
 									</Link>
 									<Link
 										onClick={() => setOpen(false)}
-										href={"/services/software-dev"}
+										href={"/services/cyber-security"}
 										className={`text-[2rem] text-white px-6`}>
 										Cyber Security
 									</Link>
