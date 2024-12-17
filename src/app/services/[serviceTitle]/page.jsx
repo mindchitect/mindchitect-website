@@ -49,7 +49,7 @@ const data = {
 						designs that are made for the most intuitive experience, great
 						project management and quality assurance, we can take your new or
 						existing product to the next level.`,
-		imgSrc: "/mis-cri.png",
+		imgSrc: "/mis-cri0.png",
 		offeringsText: `We provide comprehensive services that cover the product lifecycle
 						from the idea stage and design, through implementation and
 						deployment to the live environment, analytics and future iterations.`,

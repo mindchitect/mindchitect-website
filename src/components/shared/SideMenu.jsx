@@ -84,6 +84,12 @@ export default function SideMenu() {
 										className={`text-[2rem] text-white px-6`}>
 										Cyber Security
 									</Link>
+									<Link
+										onClick={() => setOpen(false)}
+										href={"/coding-bootcamp"}
+										className={`text-[2rem] text-white px-6`}>
+										Coding Bootcamp
+									</Link>
 								</div>
 							</Accordion>
 							<Link
