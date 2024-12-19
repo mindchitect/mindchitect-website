@@ -11,10 +11,10 @@ export default function page() {
 			<section className=" bg-[url(/contact.png)] bg-cover h-[50vh] md:h-[60vh]">
 				<div className="bg-[#00000070] w-full h-full flex flex-col items-center justify-center">
 					<h1 className="text-[4rem] md:text-[7rem] font-extrabold text-white">
-						Let's have a chat
+						{`Let's have a chat`}
 					</h1>
 					<p className="text-[1.7rem] text-white font-medium text-center">
-						Get in touch and get started today. We're ready!
+						{`Get in touch and get started today. We're ready!`}
 					</p>
 				</div>
 			</section>
@@ -47,7 +47,7 @@ export default function page() {
 							<div className="flex flex-col gap-y-[5px]  items-center justify-center">
 								<span className="font-bold text-3xl">Send an Email</span>
 								<span className="text-2xl text-gray-400">
-									We're here to help
+									{`We're here to help`}
 								</span>
 								<span className="font-bold text-2xl underline flex mt-[10]">
 									email@email.com
